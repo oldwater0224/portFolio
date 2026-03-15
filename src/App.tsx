@@ -1,5 +1,11 @@
-
-import { NAV_LABELS, PROJECTS1, SECTIONS, SKILLS_DATA, TIMELINE } from "./types";
+import {
+  NAV_LABELS,
+  PROJECTS1,
+  PROJECTS2,
+  SECTIONS,
+  SKILLS_DATA,
+  TIMELINE,
+} from "./types";
 
 import { useMouseParallax } from "./hooks/useMouseParallax";
 import { useEffect, useState } from "react";
@@ -7,21 +13,12 @@ import NavDot from "./components/NavDot";
 import SectionHeader from "./components/SectionHeader";
 import FadeIn from "./components/FadeIn";
 
-
-
-
-
-
-
-
 // ─── Main ────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
   const [scrollY, setScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const mouse = useMouseParallax(0.015);
-   
-      
 
   useEffect(() => {
     const handler = () => setScrollY(window.scrollY);
@@ -104,7 +101,9 @@ export default function Portfolio() {
               key={s}
               onClick={() => scrollTo(s)}
               className={`bg-transparent border-none cursor-pointer text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
-                activeSection === s ? "text-red-500" : "text-white/40 hover:text-white/70"
+                activeSection === s
+                  ? "text-red-500"
+                  : "text-white/40 hover:text-white/70"
               }`}
             >
               {NAV_LABELS[s]}
@@ -150,7 +149,9 @@ export default function Portfolio() {
               activeSection === s ? "text-red-500" : "text-[#F0EDE6]"
             }`}
             style={{
-              animation: menuOpen ? `slide-up 0.4s ease ${i * 0.08}s both` : "none",
+              animation: menuOpen
+                ? `slide-up 0.4s ease ${i * 0.08}s both`
+                : "none",
             }}
           >
             {NAV_LABELS[s]}
@@ -179,20 +180,19 @@ export default function Portfolio() {
         <div
           className="absolute w-[500px] h-[500px] rounded-full top-[10%] right-[-5%] transition-transform duration-300"
           style={{
-            background: "radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%)",
             transform: `translate(${mouse.x * 2}px, ${mouse.y * 2}px)`,
           }}
         />
         <div
           className="absolute w-[300px] h-[300px] rounded-full bottom-[15%] left-[5%] transition-transform duration-300"
           style={{
-            background: "radial-gradient(circle, rgba(69,123,157,0.06) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(69,123,157,0.06) 0%, transparent 70%)",
             transform: `translate(${-mouse.x}px, ${-mouse.y}px)`,
           }}
         />
-        {/* Grid lines */}
-        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/3 to-transparent" />
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/3 to-transparent" />
 
         <div className="text-center max-w-3xl relative z-10">
           <p className="text-xs tracking-[6px] uppercase text-white/30 mb-8 font-medium">
@@ -203,7 +203,6 @@ export default function Portfolio() {
             className="font-display font-black leading-none tracking-tight mb-6"
             style={{ fontSize: "clamp(48px, 8vw, 96px)" }}
           >
-            
             <span
               className="block font-normal italic text-white/35 mt-2"
               style={{ fontSize: "clamp(20px, 3vw, 36px)", letterSpacing: 0 }}
@@ -223,7 +222,7 @@ export default function Portfolio() {
 
           <div className="flex gap-4 justify-center flex-wrap">
             <button
-              onClick={() => scrollTo("projects")}
+              onClick={() => scrollTo("projects1")}
               className="bg-red-500 text-white border-none py-4 px-10 rounded-full text-sm font-medium cursor-pointer tracking-wide transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 "
             >
               프로젝트 보기
@@ -235,18 +234,20 @@ export default function Portfolio() {
               연락하기
             </button>
           </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <span className="text-[11px] tracking-[3px] uppercase text-white/15">Scroll</span>
-            <div
-              className="w-px h-12"
-              style={{
-                background: "linear-gradient(to bottom, rgba(230,57,70,0.5), transparent)",
-                animation: "float 2s ease-in-out infinite",
-              }}
-            />
-          </div>
+        </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="text-[11px] tracking-[3px] uppercase text-white/15">
+            Scroll
+          </span>
+          <div
+            className="w-px h-12"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(230,57,70,0.5), transparent)",
+              animation: "float 2s ease-in-out infinite",
+            }}
+          />
         </div>
       </section>
 
@@ -268,9 +269,9 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <FadeIn delay={0.2}>
             <p className="text-base leading-8 text-white/50 font-light">
-              국비지원 부트캠프를 통해 프로그래밍을 시작했습니다. 비전공자라는 배경은 오히려 사용자
-              관점에서 생각하는 능력을 키워주었고, '왜?'라는 질문을 멈추지 않는 학습 태도로 빠르게
-              성장하고 있습니다.
+              국비지원 부트캠프를 통해 프로그래밍을 시작했습니다. 비전공자라는
+              배경은 오히려 사용자 관점에서 생각하는 능력을 키워주었고,
+              '왜?'라는 질문을 멈추지 않는 학습 태도로 빠르게 성장하고 있습니다.
             </p>
           </FadeIn>
         </div>
@@ -281,7 +282,8 @@ export default function Portfolio() {
             <div
               className="absolute left-[7px] top-2 bottom-2 w-px"
               style={{
-                background: "linear-gradient(to bottom, #E63946, rgba(230,57,70,0.1))",
+                background:
+                  "linear-gradient(to bottom, #E63946, rgba(230,57,70,0.1))",
               }}
             />
             {TIMELINE.map((t, i) => (
@@ -340,9 +342,9 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ══════════════════ PROJECTS ══════════════════ */}
-      <section id="projects" className="py-36 px-6 max-w-4xl mx-auto">
-        <SectionHeader number="03" label="Projects" />
+      {/* ══════════════════ PROJECTS1 ══════════════════ */}
+      <section id="projects1" className="py-36 px-6 max-w-4xl mx-auto">
+        <SectionHeader number="03" label="Projects1" />
 
         <FadeIn delay={0.1}>
           <h2
@@ -377,16 +379,18 @@ export default function Portfolio() {
                   className="font-display font-bold mb-2 tracking-tight"
                   style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
                 >
-                  {project.title}
+                  {project.title1}
                 </h3>
-                <p className="text-lg text-white/45 mb-8 font-light">{project.subtitle}</p>
+                <p className="text-lg text-white/45 mb-8 font-light">
+                  {project.subtitle1}
+                </p>
                 <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
-                  {project.description}
+                  {project.description1}
                 </p>
 
                 {/* Highlights */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {project.highlights.map((h, hi) => (
+                  {project.highlights1.map((h, hi) => (
                     <div key={hi} className="flex items-center gap-2.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
                       <span className="text-sm text-white/50">{h}</span>
@@ -396,7 +400,70 @@ export default function Portfolio() {
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t, ti) => (
+                  {project.tech1.map((t, ti) => (
+                    <span
+                      key={ti}
+                      className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
+      </section>
+      {/* ══════════════════ PROJECTS2 ══════════════════ */}
+      <section id="projects2" className="py-36 px-6 max-w-4xl mx-auto">
+        <SectionHeader number="03" label="Projects2" />
+
+        {PROJECTS2.map((project, pi) => (
+          <FadeIn key={pi} delay={0.2}>
+            <div className="bg-white/2 border border-white/6 rounded-3xl p-8 md:p-14 relative overflow-hidden">
+              {/* Accent glow */}
+              <div
+                className="absolute top-0 right-0 w-52 h-52"
+                style={{
+                  background:
+                    "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
+                }}
+              />
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
+                  <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
+                    Featured Project
+                  </span>
+                </div>
+
+                <h3
+                  className="font-display font-bold mb-2 tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+                >
+                  {project.title2}
+                </h3>
+                <p className="text-lg text-white/45 mb-8 font-light">
+                  {project.subtitle2}
+                </p>
+                <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
+                  {project.description2}
+                </p>
+
+                {/* Highlights */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  {project.highlights2.map((h, hi) => (
+                    <div key={hi} className="flex items-center gap-2.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                      <span className="text-sm text-white/50">{h}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech2.map((t, ti) => (
                     <span
                       key={ti}
                       className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
@@ -412,7 +479,10 @@ export default function Portfolio() {
       </section>
 
       {/* ══════════════════ CONTACT ══════════════════ */}
-      <section id="contact" className="py-36 px-6 max-w-4xl mx-auto text-center">
+      <section
+        id="contact"
+        className="py-36 px-6 max-w-4xl mx-auto text-center"
+      >
         <SectionHeader number="04" label="Contact" />
 
         <FadeIn delay={0.1}>
@@ -454,12 +524,17 @@ export default function Portfolio() {
               이메일 보내기
             </a>
             <a
-              href="/"
+              href="https://github.com/oldwater0224"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 bg-transparent text-[#F0EDE6] no-underline border border-white/15 py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 hover:border-red-500/50 hover:text-red-500"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
               GitHub
