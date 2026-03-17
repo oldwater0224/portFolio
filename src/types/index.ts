@@ -1,5 +1,5 @@
 // ─── Types & Constants ───────────────────────────────────────────────────────
-export const SECTIONS = ["home", "about", "skills", "projects", "contact"];
+export const SECTIONS = ["home", "about", "skills",  "projects", "contact"];
 
 export const SKILLS_DATA = [
   {
@@ -53,8 +53,9 @@ export const PROJECTS2 = [
       "zustand",
       "Kakao Maps API",
       "Vercel",
+      "MongoDB"
     ],
-    highlights2: ["zustand , redux-toolkit"],
+    highlights2: ["3개 국어 지원" , "시스템 별 밝기 모드"],
   },
 ];
 

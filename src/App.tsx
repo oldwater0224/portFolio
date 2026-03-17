@@ -236,7 +236,7 @@ export default function Portfolio() {
           </div>
         </div>
         {/* Scroll indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom-30 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-[11px] tracking-[3px] uppercase text-white/15">
             Scroll
           </span>
@@ -343,8 +343,9 @@ export default function Portfolio() {
       </section>
 
       {/* ══════════════════ PROJECTS1 ══════════════════ */}
+      <div id = "projects">
       <section id="projects1" className="py-36 px-6 max-w-4xl mx-auto">
-        <SectionHeader number="03" label="Projects1" />
+        <SectionHeader number="03" label="Projects" />
 
         <FadeIn delay={0.1}>
           <h2
@@ -371,7 +372,7 @@ export default function Portfolio() {
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
                   <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
-                    Featured Project
+                    Featured Project1
                   </span>
                 </div>
 
@@ -415,8 +416,9 @@ export default function Portfolio() {
         ))}
       </section>
       {/* ══════════════════ PROJECTS2 ══════════════════ */}
+
       <section id="projects2" className="py-36 px-6 max-w-4xl mx-auto">
-        <SectionHeader number="03" label="Projects2" />
+        <SectionHeader number="03" label="Projects" />
 
         {PROJECTS2.map((project, pi) => (
           <FadeIn key={pi} delay={0.2}>
@@ -434,7 +436,7 @@ export default function Portfolio() {
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
                   <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
-                    Featured Project
+                    Featured Project2
                   </span>
                 </div>
 
@@ -477,6 +479,7 @@ export default function Portfolio() {
           </FadeIn>
         ))}
       </section>
+      </div>
 
       {/* ══════════════════ CONTACT ══════════════════ */}
       <section
