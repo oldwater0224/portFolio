@@ -236,7 +236,7 @@ export default function Portfolio() {
           </div>
         </div>
         {/* Scroll indicator */}
-        <div className="absolute bottom-30 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 overflow-hidden">
           <span className="text-[11px] tracking-[3px] uppercase text-white/15">
             Scroll
           </span>
