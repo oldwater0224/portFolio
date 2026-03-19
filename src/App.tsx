@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import NavDot from "./components/NavDot";
 import SectionHeader from "./components/SectionHeader";
 import FadeIn from "./components/FadeIn";
+import Projects from "./components/Projects";
+import Github from "./components/Github";
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
@@ -343,142 +345,153 @@ export default function Portfolio() {
       </section>
 
       {/* ══════════════════ PROJECTS1 ══════════════════ */}
-      <div id = "projects">
-      <section id="projects1" className="py-36 px-6 max-w-4xl mx-auto">
-        <SectionHeader number="03" label="Projects" />
+      <div id="projects">
+        <section id="projects1" className="py-36 px-6 max-w-4xl mx-auto">
+          <SectionHeader number="03" label="Projects" />
 
-        <FadeIn delay={0.1}>
-          <h2
-            className="font-display font-bold leading-tight mb-16 tracking-tight"
-            style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
-          >
-            주요 <span className="text-red-500 italic">프로젝트</span>
-          </h2>
-        </FadeIn>
+          <FadeIn delay={0.1}>
+            <h2
+              className="font-display font-bold leading-tight mb-16 tracking-tight"
+              style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
+            >
+              주요 <span className="text-red-500 italic">프로젝트</span>
+            </h2>
+          </FadeIn>
 
-        {PROJECTS1.map((project, pi) => (
-          <FadeIn key={pi} delay={0.2}>
-            <div className="bg-white/2 border border-white/6 rounded-3xl p-8 md:p-14 relative overflow-hidden">
-              {/* Accent glow */}
-              <div
-                className="absolute top-0 right-0 w-52 h-52"
-                style={{
-                  background:
-                    "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
-                }}
-              />
+          {PROJECTS1.map((project, pi) => (
+            <FadeIn key={pi} delay={0.2}>
+              <div className="bg-white/2 border border-white/6 rounded-3xl p-8 md:p-14 relative overflow-hidden">
+                {/* Accent glow */}
+                <div
+                  className="absolute top-0 right-0 w-52 h-52"
+                  style={{
+                    background:
+                      "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
+                  }}
+                />
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
-                  <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
-                    Featured Project1
-                  </span>
-                </div>
-
-                <h3
-                  className="font-display font-bold mb-2 tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
-                >
-                  {project.title1}
-                </h3>
-                <p className="text-lg text-white/45 mb-8 font-light">
-                  {project.subtitle1}
-                </p>
-                <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
-                  {project.description1}
-                </p>
-
-                {/* Highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {project.highlights1.map((h, hi) => (
-                    <div key={hi} className="flex items-center gap-2.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                      <span className="text-sm text-white/50">{h}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tech1.map((t, ti) => (
-                    <span
-                      key={ti}
-                      className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
-                    >
-                      {t}
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
+                    <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
+                      Featured Project1
                     </span>
-                  ))}
+                  </div>
+
+                  <h3
+                    className="font-display font-bold mb-2 tracking-tight"
+                    style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+                  >
+                    {project.title1}
+                  </h3>
+                  <p className="text-lg text-white/45 mb-8 font-light">
+                    {project.subtitle1}
+                  </p>
+                  <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
+                    {project.description1}
+                  </p>
+
+                  {/* Highlights */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    {project.highlights1.map((h, hi) => (
+                      <div key={hi} className="flex items-center gap-2.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                        <span className="text-sm text-white/50">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech1.map((t, ti) => (
+                      <span
+                        key={ti}
+                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
-        ))}
-      </section>
-      {/* ══════════════════ PROJECTS2 ══════════════════ */}
 
-      <section id="projects2" className="py-36 px-6 max-w-4xl mx-auto">
-        <SectionHeader number="03" label="Projects" />
+              {/* project link  */}
+              <div className="flex flex-wrap gap-2 mt-5 pl-3">
+                <Projects url="https://chatfutsal.vercel.app/login" />
+                <Github url="https://github.com/oldwater0224/ChatFutsal" />
+              </div>
+            </FadeIn>
+          ))}
+        </section>
+        {/* ══════════════════ PROJECTS2 ══════════════════ */}
 
-        {PROJECTS2.map((project, pi) => (
-          <FadeIn key={pi} delay={0.2}>
-            <div className="bg-white/2 border border-white/6 rounded-3xl p-8 md:p-14 relative overflow-hidden">
-              {/* Accent glow */}
-              <div
-                className="absolute top-0 right-0 w-52 h-52"
-                style={{
-                  background:
-                    "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
-                }}
-              />
+        <section id="projects2" className="py-36 px-6 max-w-4xl mx-auto">
+          <SectionHeader number="03" label="Projects" />
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
-                  <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
-                    Featured Project2
-                  </span>
-                </div>
+          {PROJECTS2.map((project, pi) => (
+            <FadeIn key={pi} delay={0.2}>
+              <div className="bg-white/2 border border-white/6 rounded-3xl p-8 md:p-14 relative overflow-hidden">
+                {/* Accent glow */}
+                <div
+                  className="absolute top-0 right-0 w-52 h-52"
+                  style={{
+                    background:
+                      "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
+                  }}
+                />
 
-                <h3
-                  className="font-display font-bold mb-2 tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
-                >
-                  {project.title2}
-                </h3>
-                <p className="text-lg text-white/45 mb-8 font-light">
-                  {project.subtitle2}
-                </p>
-                <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
-                  {project.description2}
-                </p>
-
-                {/* Highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                  {project.highlights2.map((h, hi) => (
-                    <div key={hi} className="flex items-center gap-2.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                      <span className="text-sm text-white/50">{h}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tech2.map((t, ti) => (
-                    <span
-                      key={ti}
-                      className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
-                    >
-                      {t}
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
+                    <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
+                      Featured Project2
                     </span>
-                  ))}
+                  </div>
+
+                  <h3
+                    className="font-display font-bold mb-2 tracking-tight"
+                    style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+                  >
+                    {project.title2}
+                  </h3>
+                  <p className="text-lg text-white/45 mb-8 font-light">
+                    {project.subtitle2}
+                  </p>
+                  <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
+                    {project.description2}
+                  </p>
+
+                  {/* Highlights */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    {project.highlights2.map((h, hi) => (
+                      <div key={hi} className="flex items-center gap-2.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                        <span className="text-sm text-white/50">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech2.map((t, ti) => (
+                      <span
+                        key={ti}
+                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </FadeIn>
-        ))}
-      </section>
+              {/* project link  */}
+              <div className="flex flex-wrap gap-2 mt-5 pl-3">
+                <Projects url="https://blog-post-six-delta.vercel.app" />
+                <Github url="https://github.com/oldwater0224/blog-post" />
+              </div>
+            </FadeIn>
+          ))}
+        </section>
       </div>
 
       {/* ══════════════════ CONTACT ══════════════════ */}
