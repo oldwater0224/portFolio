@@ -1,5 +1,5 @@
 // ─── Types & Constants ───────────────────────────────────────────────────────
-export const SECTIONS = ["home", "about", "skills",  "projects", "contact"];
+export const SECTIONS = ["home", "about", "skills", "projects", "contact"];
 
 export const SKILLS_DATA = [
   {
@@ -13,8 +13,11 @@ export const SKILLS_DATA = [
       "HTML / CSS",
     ],
   },
-  { category: "Backend & DB", items: ["Firebase Auth", "Cloud Firestore"] },
-  { category: "Tools", items: ["Git / GitHub", "VS Code", "Kakao Maps API"] },
+  {
+    category: "Backend & DB",
+    items: ["Firebase Auth", "Cloud Firestore", "Kakao OAuth", "MongoDB"],
+  },
+  { category: "Tools", items: ["Git / GitHub", "Kakao Maps API", "Vercel"] },
 ];
 
 export const PROJECTS1 = [
@@ -43,19 +46,31 @@ export const PROJECTS1 = [
 export const PROJECTS2 = [
   {
     title2: "SULOG",
-    subtitle2: "개인 블로그",
-    description2: "React 를 통한 개인 블로그 홈페이지 구현",
+    subtitle2: " BLOG 플랫폼",
+    description2: "React 를 사용한  블로그  ",
     tech2: [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "kakao social Login",
-      "zustand",
-      "Kakao Maps API",
+      "Zustand",
+      "Axios",
+
+      "MongoDB",
+
+      "Kakao OAuth",
       "Vercel",
-      "MongoDB"
     ],
-    highlights2: ["3개 국어 지원" , "시스템 별 밝기 모드"],
+    highlights2: [
+      "카카오 OAuth 소셜 로그인 연동",
+
+      "Axios Interceptor 자동 토큰 재발급",
+      "게시글 CRUD + 이미지 업로드",
+      "댓글 작성/삭제 (본인 댓글만 삭제)",
+      "검색 + 카테고리 필터 + 정렬 (최신/조회수)",
+      "페이지네이션 + 조회수 카운트",
+      "Zustand + Immer 전역 상태 관리",
+      "React Router  Loader 기반 데이터 페칭",
+    ],
   },
 ];
 
@@ -68,7 +83,7 @@ export const TIMELINE = [
   {
     year: "2025",
     title: "ChatFutsal MVP 개발",
-    desc: "기획부터 배포까지 1인 풀스택 프로젝트",
+    desc: "NEXT.JS 로 기획부터 배포까지 ,1인 프로젝트",
   },
   { year: "2026", title: "취업 준비 중", desc: "프론트엔드 개발자" },
 ];
