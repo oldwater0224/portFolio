@@ -521,7 +521,7 @@ export default function Portfolio() {
         <FadeIn delay={0.3}>
           <div className="flex gap-5 justify-center flex-wrap">
             <a
-              href="/"
+             
               className="inline-flex items-center gap-2.5 bg-red-500 text-white no-underline py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(230,57,70,0.4)]"
             >
               <svg
@@ -537,7 +537,10 @@ export default function Portfolio() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
-              이메일 보내기
+              <div>
+               
+                <span className="text-sm font-mono">oldwater0224@gmail.com</span>
+              </div>
             </a>
             <a
               href="https://github.com/oldwater0224"
