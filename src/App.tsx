@@ -4,7 +4,7 @@ import {
   PROJECTS2,
   SECTIONS,
   SKILLS_DATA,
-  TIMELINE,
+  
 } from "./types";
 
 import { useMouseParallax } from "./hooks/useMouseParallax";
@@ -14,6 +14,7 @@ import SectionHeader from "./components/SectionHeader";
 import FadeIn from "./components/FadeIn";
 import Projects from "./components/Projects";
 import Github from "./components/Github";
+import ProjectTabs from "./components/ProjectTabs";
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 export default function Portfolio() {
@@ -278,34 +279,7 @@ export default function Portfolio() {
           </FadeIn>
         </div>
 
-        {/* Timeline */}
-        <FadeIn delay={0.35}>
-          <div className="relative pl-10">
-            <div
-              className="absolute left-[7px] top-2 bottom-2 w-px"
-              style={{
-                background:
-                  "linear-gradient(to bottom, #E63946, rgba(230,57,70,0.1))",
-              }}
-            />
-            {TIMELINE.map((t, i) => (
-              <FadeIn key={i} delay={0.4 + i * 0.12}>
-                <div className="mb-10 relative">
-                  <div className="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-[#0A0A0B] border-2 border-red-500">
-                    {i === 0 && (
-                      <div className="absolute inset-[3px] rounded-full bg-red-500" />
-                    )}
-                  </div>
-                  <span className="font-mono text-xs text-red-500 tracking-wide">
-                    {t.year}
-                  </span>
-                  <h4 className="text-lg font-semibold mt-1 mb-1">{t.title}</h4>
-                  <p className="text-white/40 text-sm font-light">{t.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </FadeIn>
+        
       </section>
 
       {/* ══════════════════ SKILLS ══════════════════ */}
@@ -392,14 +366,14 @@ export default function Portfolio() {
                   </p>
 
                   {/* Highlights */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                    {project.highlights1.map((h, hi) => (
-                      <div key={hi} className="flex items-center gap-2.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                        <span className="text-sm text-white/50">{h}</span>
-                      </div>
-                    ))}
+                  <div className="mb-10">
+                    <ProjectTabs
+                      highlights={project.highlights1}
+                      achievements={project.achievements1}
+                      troubleshooting={project.troubleshooting1}
+                    />
                   </div>
+                  
 
                   {/* Tech tags */}
                   <div className="flex flex-wrap gap-2">
@@ -462,15 +436,13 @@ export default function Portfolio() {
                   </p>
 
                   {/* Highlights */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                    {project.highlights2.map((h, hi) => (
-                      <div key={hi} className="flex items-center gap-2.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                        <span className="text-sm text-white/50">{h}</span>
-                      </div>
-                    ))}
+                  <div className="mb-10">
+                    <ProjectTabs
+                      highlights={project.highlights2}
+                      achievements={project.achievements2}
+                      troubleshooting={project.troubleshooting2}
+                    />
                   </div>
-
                   {/* Tech tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech2.map((t, ti) => (
@@ -520,10 +492,7 @@ export default function Portfolio() {
 
         <FadeIn delay={0.3}>
           <div className="flex gap-5 justify-center flex-wrap">
-            <a
-             
-              className="inline-flex items-center gap-2.5 bg-red-500 text-white no-underline py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(230,57,70,0.4)]"
-            >
+            <a className="inline-flex items-center gap-2.5 bg-red-500 text-white no-underline py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(230,57,70,0.4)]">
               <svg
                 width="18"
                 height="18"
@@ -538,8 +507,9 @@ export default function Portfolio() {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
               <div>
-               
-                <span className="text-sm font-mono">oldwater0224@gmail.com</span>
+                <span className="text-sm font-mono">
+                  oldwater0224@gmail.com
+                </span>
               </div>
             </a>
             <a

@@ -41,52 +41,94 @@ export const PROJECTS1 = [
       "Firebase Auth  로그인",
       "반응형 모바일 퍼스트 UI",
     ],
+    achievements1: [
+      "firestore 실시간 구독으로 메세지 수신 지연 0.5초 이내 달성",
+      "WriteBatch 활용으로 읽음 처리 성능 최적화(개별 write 대비 약 60% 감소)",
+      "Kakao Maps API로 경기장 위치 시각화 구현",
+      "Firebase Auth 소셜 로그인",
+      "반응형 모바일 퍼스트 UI",
+    ],
+    troubleshooting1: [
+      {
+        problem:
+          "next/router를 사용한 페이지 이동이 App Router 환경에서 동작하지 않았다.",
+        solution:
+          "next/navigation의 useRouter로 마이그레이션하여 App Router의 라우팅 방식에 맞게 수정했다.",
+      },
+      {
+        problem:
+          "useState + useEffect로 파생 상태를 관리하니 불필요한 리렌더링이 발생했다.",
+        solution:
+          "useMemo를 활용한 파생 상태 패턴으로 변경하여 렌더링 횟수를 줄이고 코드 가독성을 높였다.",
+      },
+      {
+        problem:
+          "Firestore 컬렉션 이름 오타로 데이터가 불러와지지 않았으나, 에러 메시지 없이 빈 배열만 반환되었다.",
+        solution:
+          "Firestore는 없는 컬렉션을 에러 없이 빈 결과로 반환하는 특성을 파악하고, 컬렉션 이름을 상수로 관리하여 재발을 방지했다.",
+      },
+      {
+        problem:
+          "TypeScript에서 매치 상태 값의 리터럴 타입이 맞지 않아 컴파일 에러가 발생했다.",
+        solution:
+          "as const 단언과 유니온 타입을 적용하여 타입 안정성을 확보했다.",
+      },
+    ],
   },
 ];
 export const PROJECTS2 = [
   {
     title2: "SULOG",
-    subtitle2: " BLOG 플랫폼",
-    description2: "React 를 사용한  블로그  ",
+    subtitle2: "블로그 & 커뮤니티 플랫폼",
+    description2:
+      "블로그 기반 커뮤니티 웹 애플리케이션입니다. Kakao OAuth 소셜 로그인, Redux Toolkit 기반 상태 관리, MongoDB 연동 RESTful API, 그리고 검색·필터·페이지네이션 기능을 구현했습니다.",
     tech2: [
       "React",
       "TypeScript",
-      "Tailwind CSS",
-      "Zustand",
-      "Axios",
-
+      "Redux Toolkit",
       "MongoDB",
-
       "Kakao OAuth",
+      "Axios",
       "Vercel",
     ],
     highlights2: [
-      "카카오 OAuth 소셜 로그인 연동",
-
-      "Axios Interceptor 자동 토큰 재발급",
-      "게시글 CRUD + 이미지 업로드",
-      "댓글 작성/삭제 (본인 댓글만 삭제)",
-      "검색 + 카테고리 필터 + 정렬 (최신/조회수)",
-      "페이지네이션 + 조회수 카운트",
-      "Zustand + Immer 전역 상태 관리",
-      "React Router  Loader 기반 데이터 페칭",
+      "Kakao OAuth 소셜 로그인",
+      "게시글 CRUD , 댓글 기능",
+      "카테고리 필터 + 키워드 검색",
+      "페이지네이션 (서버사이드)",
+     
+    ],
+    achievements2: [
+      "URLSearchParams 기반 필터/정렬/검색 상태를 URL로 관리하여 새로고침 시에도 상태 유지",
+      "Axios 인터셉터로 API 통신 모듈화, 컴포넌트 내 중복 API 호출 코드 제거",
+      "React Router loader 패턴 적용으로 페이지 진입 시 데이터 프리페칭 구현",
+      "서버사이드 페이지네이션으로 한 번에 12개씩 로딩, 불필요한 전체 데이터 조회 방지",
+      
+    ],
+    troubleshooting2: [
+      {
+        problem:
+          "검색 시 page 파라미터가 누락되어 백엔드가 pagination 객체를 반환하지 않았고, 프론트에서 Cannot read properties of undefined (reading 'maxPage') 에러가 발생했다.",
+        solution:
+          "loader에서 URLSearchParams로 쿼리 스트링을 안전하게 조합하고, page/perPage 기본값을 설정했다. 프론트에서는 옵셔널 체이닝과 기본값으로 방어 처리했다.",
+      },
+      {
+        problem:
+          "loader 함수에서 쿼리 스트링 조합 시 '=' 기호가 누락되어 백엔드에 잘못된 URL이 전달되었다. (예: sort=newest가 아닌 sortnewest)",
+        solution:
+          "수동 문자열 결합 대신 URLSearchParams API를 사용하여 쿼리 스트링을 안전하게 생성하도록 리팩토링했다.",
+      },
+      {
+        problem:
+          "카테고리나 정렬 변경 시 이전 페이지 번호가 유지되어 빈 결과가 표시되는 문제가 있었다.",
+        solution:
+          "필터/정렬 변경 핸들러에서 page를 항상 1로 초기화하도록 수정하여 UX를 개선했다.",
+      },
     ],
   },
 ];
 
-export const TIMELINE = [
-  {
-    year: "2025",
-    title: "개인 블로그 SULOG",
-    desc: "React 사용한 1인 프로젝트",
-  },
-  {
-    year: "2025",
-    title: "ChatFutsal MVP 개발",
-    desc: "NEXT.JS 로 기획부터 배포까지 ,1인 프로젝트",
-  },
-  { year: "2026", title: "취업 준비 중", desc: "프론트엔드 개발자" },
-];
+
 
 export const NAV_LABELS: Record<string, string> = {
   home: "Home",
