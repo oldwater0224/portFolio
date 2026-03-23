@@ -92,7 +92,7 @@ export default function ProjectTabs({
             {achievements.map((a, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-white/2 border border-white/6 rounded-xl p-5 transition-all duration-300 hover:bg-white/4 hover:border-red-500/15"
+                className="flex items-start gap-3 bg-white/2 border border-white/6 rounded-xl p-5 transition-all duration-300 hover:bg-white/4 hover:border-emerald-400/15"
               >
                 <span className="text-xs font-mono font-medium text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded shrink-0 mt-0.5">
                   ✚
