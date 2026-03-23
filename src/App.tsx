@@ -391,7 +391,7 @@ export default function Portfolio() {
 
               {/* project link  */}
               <div className="flex flex-wrap gap-2 mt-5 pl-3">
-                <Projects url="https://chatfutsal.vercel.app/login" />
+                <Projects url="https://chatfutsal.vercel.app" />
                 <Github url="https://github.com/oldwater0224/ChatFutsal" />
               </div>
             </FadeIn>
