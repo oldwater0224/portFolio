@@ -45,7 +45,7 @@ export const PROJECTS1 = [
       "firestore 실시간 구독으로 메세지 수신 지연 0.5초 이내 달성",
       "WriteBatch 활용으로 읽음 처리 성능 최적화(개별 write 대비 약 60% 감소)",
       "Kakao Maps API로 경기장 위치 시각화 구현",
-      "Firebase Auth 소셜 로그인",
+      "용병 모집 게시판 CRUD 구현 및 사용자 친화적 UI/UX 설계",
       "반응형 모바일 퍼스트 UI",
     ],
     troubleshooting1: [
@@ -81,13 +81,14 @@ export const PROJECTS2 = [
     title2: "SULOG",
     subtitle2: "블로그 & 커뮤니티 플랫폼",
     description2:
-      "블로그 기반 커뮤니티 웹 애플리케이션입니다. Kakao OAuth 소셜 로그인, Redux Toolkit 기반 상태 관리, MongoDB 연동 RESTful API, 그리고 검색·필터·페이지네이션 기능을 구현했습니다.",
+      "블로그 기반 커뮤니티 웹 애플리케이션입니다. Kakao OAuth 소셜 로그인, Zustand 기반 상태 관리,  MongoDB 연동 RESTful API, 그리고 검색·필터·페이지네이션 기능을 구현했습니다.",
     tech2: [
       "React",
       "TypeScript",
       "Redux Toolkit",
       "MongoDB",
       "Kakao OAuth",
+      "Zustand",
       "Axios",
       "Vercel",
     ],
@@ -108,15 +109,15 @@ export const PROJECTS2 = [
     troubleshooting2: [
       {
         problem:
-          "검색 시 page 파라미터가 누락되어 백엔드가 pagination 객체를 반환하지 않았고, 프론트에서 Cannot read properties of undefined (reading 'maxPage') 에러가 발생했다.",
+          "페이지네이션 구현 시 URLSearchParams로 쿼리 스트링을 조합하는 과정에서 page, perPage 값이 undefined가 되어 API 호출이 실패했다.",
         solution:
           "loader에서 URLSearchParams로 쿼리 스트링을 안전하게 조합하고, page/perPage 기본값을 설정했다. 프론트에서는 옵셔널 체이닝과 기본값으로 방어 처리했다.",
       },
       {
         problem:
-          "loader 함수에서 쿼리 스트링 조합 시 '=' 기호가 누락되어 백엔드에 잘못된 URL이 전달되었다. (예: sort=newest가 아닌 sortnewest)",
+          "카카오 로그인 API 호출 시 CORS 에러가 발생하여 인증이 실패했다.",
         solution:
-          "수동 문자열 결합 대신 URLSearchParams API를 사용하여 쿼리 스트링을 안전하게 생성하도록 리팩토링했다.",
+          "백엔드에서 카카오 API를 호출하도록 프록시 패턴으로 구조를 변경하여 CORS 문제를 해결했다.",
       },
       {
         problem:
