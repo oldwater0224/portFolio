@@ -37,8 +37,8 @@ export const PROJECTS1 = [
     highlights1: [
       "실시간 채팅 (Firestore onSnapshot)",
       "용병 모집 게시판 CRUD",
-      "카카오맵 기반 매치경기장 검색",
-      "Firebase Auth  로그인",
+      "카카오맵 기반 매치경기장 안내",
+      "매치 조회/참가 신청/취소 ",
       "반응형 모바일 퍼스트 UI",
     ],
     achievements1: [
