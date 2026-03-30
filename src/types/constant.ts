@@ -1,4 +1,4 @@
-// ─── Types & Constants ───────────────────────────────────────────────────────
+// Constants 
 export const SECTIONS = ["home", "about", "skills", "projects", "contact"];
 
 export const SKILLS_DATA = [
@@ -65,7 +65,7 @@ export const PROJECTS1 = [
         problem:
           "Firestore 컬렉션 이름 오타로 데이터가 불러와지지 않아서 에러 메시지 없이 빈 배열만 반환되었다.",
         solution:
-          "Firestore는 없는 컬렉션을 에러 없이 빈 결과로 반환하는 특성을 파악하고, 컬렉션 이름을 상수로 관리하여 재발을 방지했다.",
+          "Firestore는 없는 컬렉션을 에러 없이 빈 결과로 반환하는 특성임을 파악하고, 컬렉션 이름을 상수로 관리하여 재발을 방지했다.",
       },
       {
         problem:
@@ -111,7 +111,7 @@ export const PROJECTS2 = [
         problem:
           "페이지네이션 구현 시 URLSearchParams로 쿼리 스트링을 조합하는 과정에서 page, perPage 값이 undefined가 되어 API 호출이 실패했다.",
         solution:
-          "loader에서 URLSearchParams로 쿼리 스트링을 안전하게 조합하고, page/perPage 기본값을 설정했다. 프론트에서는 옵셔널 체이닝과 기본값으로 방어 처리했다.",
+          "loader에서 URLSearchParams로 쿼리 스트링을 안전하게 조합하고, page/perPage 기본값을 설정했다. 프론트에서는 옵셔널 체이닝과 기본값 처리로 방어 처리했다.",
       },
       {
         problem:

@@ -5,7 +5,7 @@ import {
   SECTIONS,
   SKILLS_DATA,
   
-} from "./types";
+} from "./types/constant";
 
 import { useMouseParallax } from "./hooks/useMouseParallax";
 import { useEffect, useState } from "react";
