@@ -15,7 +15,7 @@ interface ProjectTabsProps {
 // ─── Tab Button ──────────────────────────────────────────────────────────────
 function TabButton({
   label,
-  active,
+
   onClick,
 }: {
   label: string;
@@ -25,11 +25,7 @@ function TabButton({
   return (
     <button
       onClick={onClick}
-      className={`px-5 py-2.5 rounded-full text-xs font-medium tracking-wide cursor-pointer border-none transition-all duration-300 ${
-        active
-          ? "bg-red-500/15 text-red-500 border border-red-500/30"
-          : "bg-white/3 text-white/40 hover:text-white/60 hover:bg-white/5"
-      }`}
+      className={`px-5 py-2.5 rounded-full text-xs font-medium tracking-wide cursor-pointer border-none transition-all duration-300 ${"bg-white/3 text-white  hover:bg-white/5"}`}
     >
       {label}
     </button>
@@ -79,7 +75,7 @@ export default function ProjectTabs({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {highlights.map((h, i) => (
               <div key={i} className="flex items-center gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full  bg-[#24D366] shrink-0" />
                 <span className="text-sm text-white/50">{h}</span>
               </div>
             ))}
@@ -92,7 +88,7 @@ export default function ProjectTabs({
             {achievements.map((a, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 bg-white/2 border border-white/6 rounded-xl p-5 transition-all duration-300 hover:bg-white/4 hover:border-emerald-400/15"
+                className="flex items-start gap-3 bg-white/2 border border-white/6 rounded-xl p-5 transition-all duration-300  "
               >
                 <span className="text-xs font-mono font-medium text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded shrink-0 mt-0.5">
                   ✚
@@ -111,7 +107,7 @@ export default function ProjectTabs({
             {troubleshooting.map((item, i) => (
               <div
                 key={i}
-                className="bg-white/2 border border-white/6 rounded-xl overflow-hidden transition-all duration-300 hover:border-red-500/15"
+                className="bg-white/2 border border-white/6 rounded-xl overflow-hidden transition-all duration-300 "
               >
                 {/* Problem */}
                 <div className="px-5 py-4 border-b border-white/4">

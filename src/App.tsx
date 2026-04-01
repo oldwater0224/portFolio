@@ -4,7 +4,6 @@ import {
   PROJECTS2,
   SECTIONS,
   SKILLS_DATA,
-  
 } from "./types/constant";
 
 import { useMouseParallax } from "./hooks/useMouseParallax";
@@ -60,7 +59,7 @@ export default function Portfolio() {
         // *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; }
-        ::selection { background: #E63946; color: #fff; }
+         // ::selection {background : black; color: #fff; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0A0A0B; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
@@ -94,7 +93,8 @@ export default function Portfolio() {
         }`}
       >
         <div className="font-display text-xl font-bold tracking-tight">
-          <span className="text-red-500">H</span>eonsu
+          <span className="text-[#24D366]">H</span>eon
+          <span className="text-[#24D366]">s</span>u
         </div>
 
         {/* Desktop links */}
@@ -105,7 +105,7 @@ export default function Portfolio() {
               onClick={() => scrollTo(s)}
               className={`bg-transparent border-none cursor-pointer text-sm font-medium tracking-wide uppercase transition-colors duration-300 ${
                 activeSection === s
-                  ? "text-red-500"
+                  ? "text-[#24D366]"
                   : "text-white/40 hover:text-white/70"
               }`}
             >
@@ -149,7 +149,7 @@ export default function Portfolio() {
             key={s}
             onClick={() => scrollTo(s)}
             className={`block bg-transparent border-none cursor-pointer text-3xl font-light font-display mb-8 text-left ${
-              activeSection === s ? "text-red-500" : "text-[#F0EDE6]"
+              activeSection === s ? "text-[#24D366]" : "text-[#F0EDE6]"
             }`}
             style={{
               animation: menuOpen
@@ -179,26 +179,8 @@ export default function Portfolio() {
         id="home"
         className="min-h-screen flex items-center justify-center relative overflow-hidden px-6"
       >
-        {/* Background blobs */}
-        <div
-          className="absolute w-[500px] h-[500px] rounded-full top-[10%] right-[-5%] transition-transform duration-300"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(230,57,70,0.08) 0%, transparent 70%)",
-            transform: `translate(${mouse.x * 2}px, ${mouse.y * 2}px)`,
-          }}
-        />
-        <div
-          className="absolute w-[300px] h-[300px] rounded-full bottom-[15%] left-[5%] transition-transform duration-300"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(69,123,157,0.06) 0%, transparent 70%)",
-            transform: `translate(${-mouse.x}px, ${-mouse.y}px)`,
-          }}
-        />
-
         <div className="text-center max-w-3xl relative z-10">
-          <p className="text-xs tracking-[6px] uppercase text-white/30 mb-8 font-medium">
+          <p className="text-xs tracking-[6px] uppercase  mb-8 font-medium">
             Frontend Developer
           </p>
 
@@ -207,7 +189,7 @@ export default function Portfolio() {
             style={{ fontSize: "clamp(48px, 8vw, 96px)" }}
           >
             <span
-              className="block font-normal italic text-white/35 mt-2"
+              className="block font-normal italic mt-2"
               style={{ fontSize: "clamp(20px, 3vw, 36px)", letterSpacing: 0 }}
             >
               Jeong Heonsu
@@ -215,27 +197,35 @@ export default function Portfolio() {
           </h1>
 
           <p
-            className="leading-loose text-white/45 font-light max-w-lg mx-auto mb-12"
+            className="leading-loose font-light max-w-lg mx-auto mb-12"
             style={{ fontSize: "clamp(16px, 2vw, 20px)" }}
           >
-            비전공자에서 개발자로.
-            <br />
-            깊이 있는 이해를 추구하며, 사용자 경험을 고민하는 개발자입니다.
+            코드 속에 문제를 발견하고 해결하는 것을 즐기는 개발자입니다.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap">
             <button
               onClick={() => scrollTo("projects1")}
-              className="bg-red-500 text-white border-none py-4 px-10 rounded-full text-sm font-medium cursor-pointer tracking-wide transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 "
+              className="bg-[#24D366] text-black border-none py-4 px-10 rounded-full text-sm font-medium cursor-pointer tracking-wide transition-all duration-300 hover:-translate-y-0.5"
             >
               프로젝트 보기
             </button>
-            <button
-              onClick={() => scrollTo("contact")}
-              className="bg-transparent text-[#F0EDE6] border border-white/15 py-4 px-10 rounded-full text-sm font-medium cursor-pointer tracking-wide transition-all duration-300 hover:border-red-500/50 hover:text-red-500"
+            <a
+              href="https://github.com/oldwater0224"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 bg-transparent text-[#F0EDE6] no-underline border border-white/15 py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 hover:border-[#24D366] hover:text-white"
             >
-              연락하기
-            </button>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
           </div>
         </div>
         {/* Scroll indicator */}
@@ -246,8 +236,7 @@ export default function Portfolio() {
           <div
             className="w-px h-12"
             style={{
-              background:
-                "linear-gradient(to bottom, rgba(230,57,70,0.5), transparent)",
+              background: "linear-gradient(to bottom , gray , transparent)",
               animation: "float 2s ease-in-out infinite",
             }}
           />
@@ -265,21 +254,21 @@ export default function Portfolio() {
           >
             코드로 문제를 해결하는 것에
             <br />
-            <span className="text-red-500 italic">열정</span>을 가진 개발자
+            <span className="text-[#24D366] italic">열정</span>을 가진 개발자
           </h2>
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <FadeIn delay={0.2}>
             <p className="text-base leading-8 text-white/50 font-light">
-              국비지원 부트캠프를 통해 프로그래밍을 시작했습니다. 비전공자라는
-              배경은 오히려 사용자 관점에서 생각하는 능력을 키워주었고,
-              '왜?'라는 질문을 멈추지 않는 학습 태도로 빠르게 성장하고 있습니다.
+              안녕하세요 프론트엔드 개발자 정 헌수 입니다. <br />
+               문제를 발견하고 해결하는 것을 즐깁니다. <br />
+              사용자에게 직관적인 경험을 제공 할 수 있도록 고민하며,
+              <br />
+              새로운 기술을 배우고 도전하는 것을 좋아합니다.
             </p>
           </FadeIn>
         </div>
-
-        
       </section>
 
       {/* ══════════════════ SKILLS ══════════════════ */}
@@ -291,22 +280,19 @@ export default function Portfolio() {
             className="font-display font-bold leading-tight mb-16 tracking-tight"
             style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
           >
-            기술 <span className="text-red-500 italic">스택</span>
+            기술 <span className="italic">스택</span>
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="flex flex-wrap justify-content gap-6 ">
           {SKILLS_DATA.map((group, gi) => (
             <FadeIn key={gi} delay={0.15 + gi * 0.1}>
-              <div className="bg-white/3 border border-white/6 rounded-2xl p-7 transition-all duration-300 hover:bg-white/5 hover:border-red-500/20 hover:-translate-y-1">
-                <h3 className="text-xs tracking-[3px] uppercase text-red-500 mb-5 font-semibold">
-                  {group.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-4  ">
+                <div className=" flex flex-wrap gap-2">
                   {group.items.map((item, ii) => (
                     <span
                       key={ii}
-                      className="inline-block py-2 px-4 rounded-full text-sm bg-white/4 border border-white/8 transition-all duration-300 cursor-default hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-500 hover:scale-105"
+                      className="inline-block py-2 px-4 rounded-full text-sm text-white/35 border-[#24D366] border  transition-all duration-300 cursor-default  "
                     >
                       {item}
                     </span>
@@ -318,7 +304,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ══════════════════ PROJECTS1 ══════════════════ */}
+      {/* PROJECTS1 */}
       <div id="projects">
         <section id="projects1" className="py-36 px-6 max-w-4xl mx-auto">
           <SectionHeader number="03" label="Projects" />
@@ -328,7 +314,7 @@ export default function Portfolio() {
               className="font-display font-bold leading-tight mb-16 tracking-tight"
               style={{ fontSize: "clamp(32px, 5vw, 52px)" }}
             >
-              주요 <span className="text-red-500 italic">프로젝트</span>
+              주요 <span className=" italic">프로젝트</span>
             </h2>
           </FadeIn>
 
@@ -340,13 +326,13 @@ export default function Portfolio() {
                   className="absolute top-0 right-0 w-52 h-52"
                   style={{
                     background:
-                      "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
+                      "radial-gradient(circle at top right, transparent 70%)",
                   }}
                 />
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
+                    <div className="w-3 h-3 rounded-full bg-[#24D366]" />
                     <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
                       Featured Project1
                     </span>
@@ -361,7 +347,7 @@ export default function Portfolio() {
                   <p className="text-lg text-white/45 mb-8 font-light">
                     {project.subtitle1}
                   </p>
-                  <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
+                  <p className="text-base leading-loose text-white max-w-2xl mb-10 font-light">
                     {project.description1}
                   </p>
 
@@ -373,14 +359,13 @@ export default function Portfolio() {
                       troubleshooting={project.troubleshooting1}
                     />
                   </div>
-                  
 
                   {/* Tech tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech1.map((t, ti) => (
                       <span
                         key={ti}
-                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
+                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-white/2  border-[black]  transition-all duration-300"
                       >
                         {t}
                       </span>
@@ -397,7 +382,8 @@ export default function Portfolio() {
             </FadeIn>
           ))}
         </section>
-        {/* ══════════════════ PROJECTS2 ══════════════════ */}
+
+        {/* PROJECTS2 */}
 
         <section id="projects2" className="py-36 px-6 max-w-4xl mx-auto">
           <SectionHeader number="03" label="Projects" />
@@ -410,13 +396,13 @@ export default function Portfolio() {
                   className="absolute top-0 right-0 w-52 h-52"
                   style={{
                     background:
-                      "radial-gradient(circle at top right, rgba(230,57,70,0.06), transparent 70%)",
+                      "radial-gradient(circle at top right, transparent 70%)",
                   }}
                 />
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_16px_rgba(230,57,70,0.4)]" />
+                    <div className="w-3 h-3 rounded-full bg-[#24D366]" />
                     <span className="font-mono text-xs text-white/30 tracking-[2px] uppercase">
                       Featured Project2
                     </span>
@@ -431,7 +417,7 @@ export default function Portfolio() {
                   <p className="text-lg text-white/45 mb-8 font-light">
                     {project.subtitle2}
                   </p>
-                  <p className="text-base leading-loose text-white/50 max-w-2xl mb-10 font-light">
+                  <p className="text-base leading-loose text-white max-w-2xl mb-10 font-light">
                     {project.description2}
                   </p>
 
@@ -448,7 +434,7 @@ export default function Portfolio() {
                     {project.tech2.map((t, ti) => (
                       <span
                         key={ti}
-                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight bg-red-500/10 border border-red-500/25 text-red-500 transition-all duration-300 hover:bg-red-500/20 hover:-translate-y-0.5"
+                        className="inline-block py-1.5 px-3.5 rounded-full text-xs font-mono tracking-tight  bg-white/2  border-black transition-all duration-300"
                       >
                         {t}
                       </span>
@@ -478,7 +464,7 @@ export default function Portfolio() {
             className="font-display font-bold leading-tight mb-6 tracking-tight"
             style={{ fontSize: "clamp(32px, 5vw, 56px)" }}
           >
-            함께 일하고 <span className="text-red-500 italic">싶으시다면</span>
+            함께 일하고 <span className="italic">싶으시다면</span>
           </h2>
         </FadeIn>
 
@@ -492,7 +478,7 @@ export default function Portfolio() {
 
         <FadeIn delay={0.3}>
           <div className="flex gap-5 justify-center flex-wrap">
-            <a className="inline-flex items-center gap-2.5 bg-red-500 text-white no-underline py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 shadow-[0_4px_24px_rgba(230,57,70,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(230,57,70,0.4)]">
+            <a className="inline-flex items-center gap-2.5 text-white no-underline py-4 px-10 rounded-full text-sm font-medium transition-all duration-300">
               <svg
                 width="18"
                 height="18"
@@ -511,22 +497,6 @@ export default function Portfolio() {
                   oldwater0224@gmail.com
                 </span>
               </div>
-            </a>
-            <a
-              href="https://github.com/oldwater0224"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-transparent text-[#F0EDE6] no-underline border border-white/15 py-4 px-10 rounded-full text-sm font-medium transition-all duration-300 hover:border-red-500/50 hover:text-red-500"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              GitHub
             </a>
           </div>
         </FadeIn>
