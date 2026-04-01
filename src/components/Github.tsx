@@ -10,7 +10,7 @@ export default function Github ({ url, label = "GitHub" }: GithubProps) {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-transparent text-[#F0EDE6] no-underline border border-white/15 py-4 px-10 rounded-full text-xs font-medium transition-all duration-300  hover:border-[#24D366]"
+                  className="inline-flex items-center gap-2.5 bg-transparent text-[#F0EDE6] no-underline border border-white/15 py-4 px-10 rounded-full text-xs font-medium transition-all duration-300 hover:border-red-500/50 hover:text-red-500"
                 >
                   <svg
                     width="18"

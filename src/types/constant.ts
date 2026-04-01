@@ -1,18 +1,23 @@
-// Constants
+// Constants 
 export const SECTIONS = ["home", "about", "skills", "projects", "contact"];
 
 export const SKILLS_DATA = [
   {
-    
+    category: "Frontend",
     items: [
       "React",
-      "Next.js",
+      "Next.js 14",
       "JavaScript",
       "TypeScript",
       "Tailwind CSS",
       "HTML / CSS",
     ],
   },
+  {
+    category: "Backend & DB",
+    items: ["Firebase Auth", "Cloud Firestore", "Kakao OAuth", "MongoDB"],
+  },
+  { category: "Tools", items: ["Git / GitHub", "Kakao Maps API", "Vercel"] },
 ];
 
 export const PROJECTS1 = [
@@ -20,9 +25,9 @@ export const PROJECTS1 = [
     title1: "ChatFutsal",
     subtitle1: "풋살 매칭 & 실시간 채팅 플랫폼",
     description1:
-      "풋살 소셜 모임을 참가하던 중 실시간 채팅이 앱 내에서 가능하다면 좋겠다는 아이디어에서 출발한 웹 애플리케이션 입니다. 풋살 경기를 찾고, 용병을 모집하고, 실시간으로 소통할 수 있는 올인원 플랫폼입니다.",
+      "풋살 경기를 찾고, 용병을 모집하고, 실시간으로 소통할 수 있는 올인원 플랫폼입니다. Firestore onSnapshot 기반의 실시간 채팅, Kakao Maps 연동 경기장 확인, 반응형 UI를 구현했습니다.",
     tech1: [
-      "Next.js",
+      "Next.js 14",
       "TypeScript",
       "Tailwind CSS",
       "Firebase",
@@ -30,14 +35,18 @@ export const PROJECTS1 = [
       "Vercel",
     ],
     highlights1: [
-      "실시간 채팅",
+      "실시간 채팅 (Firestore onSnapshot)",
       "용병 모집 게시판 CRUD",
       "카카오맵 기반 매치경기장 안내",
       "매치 조회/참가 신청/취소 ",
-      
+      "반응형 모바일 퍼스트 UI",
     ],
     achievements1: [
+      "firestore 실시간 구독으로 메세지 수신 지연 0.5초 이내 달성",
       "WriteBatch 활용으로 읽음 처리 성능 최적화(개별 write 대비 약 60% 감소)",
+      "Kakao Maps API로 경기장 위치 시각화 구현",
+      "용병 모집 게시판 CRUD 구현 및 사용자 친화적 UI/UX 설계",
+      "반응형 모바일 퍼스트 UI",
     ],
     troubleshooting1: [
       {
@@ -72,12 +81,12 @@ export const PROJECTS2 = [
     title2: "SULOG",
     subtitle2: "블로그 & 커뮤니티 플랫폼",
     description2:
-      "다양한 일상을 공유하는  블로그 기반 커뮤니티 웹 애플리케이션입니다.",
+      "블로그 기반 커뮤니티 웹 애플리케이션입니다. Kakao OAuth 소셜 로그인, Zustand 기반 상태 관리,  MongoDB 연동 RESTful API, 그리고 검색·필터·페이지네이션 기능을 구현했습니다.",
     tech2: [
       "React",
       "TypeScript",
       "Redux Toolkit",
-
+      "MongoDB",
       "Kakao OAuth",
       "Zustand",
       "Axios",
@@ -88,8 +97,15 @@ export const PROJECTS2 = [
       "게시글 CRUD , 댓글 기능",
       "카테고리 필터 + 키워드 검색",
       "페이지네이션 (서버사이드)",
+     
     ],
-    achievements2: [],
+    achievements2: [
+      "URLSearchParams 기반 필터/정렬/검색 상태를 URL로 관리하여 새로고침 시에도 상태 유지",
+      "Axios 인터셉터로 API 통신 모듈화, 컴포넌트 내 중복 API 호출 코드 제거",
+      "React Router loader 패턴 적용으로 페이지 진입 시 데이터 프리페칭 구현",
+      "서버사이드 페이지네이션으로 한 번에 12개씩 로딩, 불필요한 전체 데이터 조회 방지",
+      
+    ],
     troubleshooting2: [
       {
         problem:
@@ -112,6 +128,8 @@ export const PROJECTS2 = [
     ],
   },
 ];
+
+
 
 export const NAV_LABELS: Record<string, string> = {
   home: "Home",
